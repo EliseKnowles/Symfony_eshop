@@ -26,6 +26,12 @@ class Commande
      */
     private $etat;
 
+    public function __construct()
+    {
+        $this->setDateAchat(new \DateTime);
+        $this->setEtat(false);
+    }
+
     public function getId(): ?int
     {
         return $this->id;
