@@ -29,6 +29,11 @@ class Produit
      */
     private $nom;
 
+        /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $description;
+
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
@@ -40,7 +45,7 @@ class Produit
      * @Assert\Type("integer")
      * @Assert\GreaterThanOrEqual(0)
      */
-    private $qte;
+    private $stock;
 
     /**
      * @ORM\Column(type="integer")
@@ -54,11 +59,6 @@ class Produit
      * @ORM\OneToMany(targetEntity="App\Entity\Panier", mappedBy="produit", orphanRemoval=true)
      */
     private $panier;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $description;
 
     public function __construct()
     {
@@ -82,6 +82,18 @@ class Produit
         return $this;
     }
 
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
     public function getPhoto(): ?string
     {
         return $this->photo;
@@ -94,14 +106,14 @@ class Produit
         return $this;
     }
 
-    public function getQte(): ?int
+    public function getStock(): ?int
     {
-        return $this->qte;
+        return $this->stock;
     }
 
-    public function setQte(int $qte): self
+    public function setStock(int $stock): self
     {
-        $this->qte = $qte;
+        $this->stock = $stock;
 
         return $this;
     }
@@ -154,15 +166,4 @@ class Produit
         return $this->nom;
     }
 
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): self
-    {
-        $this->description = $description;
-
-        return $this;
-    }
 }

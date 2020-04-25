@@ -16,6 +16,8 @@
     <h2>{{ 'Produit.aupanier'|trans }}</h2>
     {{form(form_panier_ajout)}}
 
+    <h2>Modifier le Produit :</h2>
+
     <button type="button" class="btn btn-danger">
         <a href="{{ path('produit_delete', {'id':produit.id}) }}">
         {{ 'Produit.suppr'|trans }}

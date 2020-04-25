@@ -114,8 +114,8 @@ class __TwigTemplate_d8c72a1aa2d4ae8bcf1cb322d1a00136fa861e10c51ea3f1a47b9a359f4
                     <th></th>
                 </tr>
             </thead>
+            
             <tbody>
-
             ";
             // line 21
             $context["prix_total"] = 0;
@@ -176,38 +176,43 @@ class __TwigTemplate_d8c72a1aa2d4ae8bcf1cb322d1a00136fa861e10c51ea3f1a47b9a359f4
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['produit'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 43
-            echo "
-            </tbody>
-            <td class=\"text-muted\" >";
-            // line 45
-            echo twig_escape_filter($this->env, twig_length_filter($this->env, (isset($context["panier"]) || array_key_exists("panier", $context) ? $context["panier"] : (function () { throw new RuntimeError('Variable "panier" does not exist.', 45, $this->source); })())), "html", null, true);
+            echo "            </tbody>
+
+            <tbody>
+                <tr style=\"background-color: whitesmoke; \">
+                    <td class=\"text-muted\" >";
+            // line 47
+            echo twig_escape_filter($this->env, twig_length_filter($this->env, (isset($context["panier"]) || array_key_exists("panier", $context) ? $context["panier"] : (function () { throw new RuntimeError('Variable "panier" does not exist.', 47, $this->source); })())), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Panier.article"), "html", null, true);
             echo "</td>
-            <td></td> <td></td>
-            <td class=\"font-weight-bold\" >";
-            // line 47
-            echo twig_escape_filter($this->env, (isset($context["prix_total"]) || array_key_exists("prix_total", $context) ? $context["prix_total"] : (function () { throw new RuntimeError('Variable "prix_total" does not exist.', 47, $this->source); })()), "html", null, true);
+                    <td></td> <td></td>
+                    <td class=\"font-weight-bold\" >";
+            // line 49
+            echo twig_escape_filter($this->env, (isset($context["prix_total"]) || array_key_exists("prix_total", $context) ? $context["prix_total"] : (function () { throw new RuntimeError('Variable "prix_total" does not exist.', 49, $this->source); })()), "html", null, true);
             echo " €</td>
-            <td>
-                <button type=\"button\" class=\"btn btn-success\">
-                    <a href=\"#\">
-                        Payer
-                    </a>
-                </button>
-            </td>
+                    <td>
+                        <button type=\"button\" class=\"btn btn-success\">
+                            <a href=\"#\">
+                                Payer
+                            </a>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+
         </table>
 
 
     ";
         } else {
-            // line 59
+            // line 64
             echo "        <p>";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Panier.noproduit"), "html", null, true);
             echo "</p>
     ";
         }
-        // line 61
+        // line 66
         echo "
 
 ";
@@ -231,7 +236,7 @@ class __TwigTemplate_d8c72a1aa2d4ae8bcf1cb322d1a00136fa861e10c51ea3f1a47b9a359f4
 
     public function getDebugInfo()
     {
-        return array (  211 => 61,  205 => 59,  190 => 47,  183 => 45,  179 => 43,  167 => 37,  163 => 36,  156 => 32,  151 => 30,  147 => 29,  143 => 28,  140 => 27,  138 => 26,  133 => 25,  129 => 24,  126 => 23,  123 => 22,  121 => 21,  111 => 14,  107 => 13,  103 => 12,  98 => 9,  96 => 8,  90 => 6,  80 => 5,  59 => 3,  36 => 1,);
+        return array (  216 => 66,  210 => 64,  192 => 49,  185 => 47,  179 => 43,  167 => 37,  163 => 36,  156 => 32,  151 => 30,  147 => 29,  143 => 28,  140 => 27,  138 => 26,  133 => 25,  129 => 24,  126 => 23,  123 => 22,  121 => 21,  111 => 14,  107 => 13,  103 => 12,  98 => 9,  96 => 8,  90 => 6,  80 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -254,8 +259,8 @@ class __TwigTemplate_d8c72a1aa2d4ae8bcf1cb322d1a00136fa861e10c51ea3f1a47b9a359f4
                     <th></th>
                 </tr>
             </thead>
+            
             <tbody>
-
             {% set prix_total = 0 %}
             {% set prix_qte = 0 %}
 
@@ -278,18 +283,23 @@ class __TwigTemplate_d8c72a1aa2d4ae8bcf1cb322d1a00136fa861e10c51ea3f1a47b9a359f4
                         </td>
                     </tr>
                 {% endfor %}
-
             </tbody>
-            <td class=\"text-muted\" >{{ panier|length }} {{ 'Panier.article'|trans }}</td>
-            <td></td> <td></td>
-            <td class=\"font-weight-bold\" >{{prix_total}} €</td>
-            <td>
-                <button type=\"button\" class=\"btn btn-success\">
-                    <a href=\"#\">
-                        Payer
-                    </a>
-                </button>
-            </td>
+
+            <tbody>
+                <tr style=\"background-color: whitesmoke; \">
+                    <td class=\"text-muted\" >{{ panier|length }} {{ 'Panier.article'|trans }}</td>
+                    <td></td> <td></td>
+                    <td class=\"font-weight-bold\" >{{prix_total}} €</td>
+                    <td>
+                        <button type=\"button\" class=\"btn btn-success\">
+                            <a href=\"#\">
+                                Payer
+                            </a>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+
         </table>
 
 

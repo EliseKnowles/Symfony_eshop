@@ -58,13 +58,13 @@ class __TwigTemplate_b721e97a1436c96bf39255c8530c0bc40943bd4ee4de62dad95443ab782
         ";
         // line 9
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 17
+        // line 21
         echo "
     </head>
     <body>
 
         <!-- Menu Bootstrap -->
-        <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
+        <nav class=\"navbar navbar-expand-lg bg-light\">
             <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                 <span class=\"navbar-toggler-icon\"></span>
             </button>
@@ -72,7 +72,7 @@ class __TwigTemplate_b721e97a1436c96bf39255c8530c0bc40943bd4ee4de62dad95443ab782
                 <ul class=\"navbar-nav mr-auto\">
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
-        // line 29
+        // line 33
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("panier");
         echo "\">";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Panier.panier"), "html", null, true);
@@ -80,29 +80,32 @@ class __TwigTemplate_b721e97a1436c96bf39255c8530c0bc40943bd4ee4de62dad95443ab782
                     </li>
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
-        // line 32
+        // line 36
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produits");
         echo "\">";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.produits"), "html", null, true);
         echo "</a>
                     </li>
                 </ul>
-                <a class=\"nav-link\" href=\"#\">Mon Compte</a>
+                <a class=\"nav-link\" href=\"";
+        // line 39
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("utilisateur");
+        echo "\">Mon Compte</a>
             </div>
         </nav>
 
         <div class=\"container\">
             ";
-        // line 40
+        // line 44
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 40, $this->source); })()), "flashes", [], "any", false, false, false, 40));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 44, $this->source); })()), "flashes", [], "any", false, false, false, 44));
         foreach ($context['_seq'] as $context["type"] => $context["messages"]) {
-            // line 41
+            // line 45
             echo "                ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($context["messages"]);
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                // line 42
+                // line 46
                 echo "                    <p class=\"alert alert-";
                 echo twig_escape_filter($this->env, $context["type"], "html", null, true);
                 echo "\">";
@@ -113,24 +116,24 @@ class __TwigTemplate_b721e97a1436c96bf39255c8530c0bc40943bd4ee4de62dad95443ab782
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 44
+            // line 48
             echo "            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['type'], $context['messages'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 45
+        // line 49
         echo "
             ";
-        // line 46
+        // line 50
         $this->displayBlock('body', $context, $blocks);
-        // line 47
+        // line 51
         echo "        </div>
         
         ";
-        // line 49
+        // line 53
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 50
+        // line 54
         echo "    </body>
 </html>";
         
@@ -172,6 +175,10 @@ class __TwigTemplate_b721e97a1436c96bf39255c8530c0bc40943bd4ee4de62dad95443ab782
 
         // line 10
         echo "        <style>
+        button a {
+            color: white;
+        }
+        
         img {
             width: 150px;
             height: 150px;
@@ -186,7 +193,7 @@ class __TwigTemplate_b721e97a1436c96bf39255c8530c0bc40943bd4ee4de62dad95443ab782
 
     }
 
-    // line 46
+    // line 50
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -204,7 +211,7 @@ class __TwigTemplate_b721e97a1436c96bf39255c8530c0bc40943bd4ee4de62dad95443ab782
 
     }
 
-    // line 49
+    // line 53
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -234,7 +241,7 @@ class __TwigTemplate_b721e97a1436c96bf39255c8530c0bc40943bd4ee4de62dad95443ab782
 
     public function getDebugInfo()
     {
-        return array (  208 => 49,  190 => 46,  174 => 10,  164 => 9,  145 => 5,  134 => 50,  132 => 49,  128 => 47,  126 => 46,  123 => 45,  117 => 44,  106 => 42,  101 => 41,  97 => 40,  84 => 32,  76 => 29,  62 => 17,  60 => 9,  53 => 5,  47 => 1,);
+        return array (  215 => 53,  197 => 50,  177 => 10,  167 => 9,  148 => 5,  137 => 54,  135 => 53,  131 => 51,  129 => 50,  126 => 49,  120 => 48,  109 => 46,  104 => 45,  100 => 44,  92 => 39,  84 => 36,  76 => 33,  62 => 21,  60 => 9,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -249,6 +256,10 @@ class __TwigTemplate_b721e97a1436c96bf39255c8530c0bc40943bd4ee4de62dad95443ab782
         
         {% block stylesheets %}
         <style>
+        button a {
+            color: white;
+        }
+        
         img {
             width: 150px;
             height: 150px;
@@ -260,7 +271,7 @@ class __TwigTemplate_b721e97a1436c96bf39255c8530c0bc40943bd4ee4de62dad95443ab782
     <body>
 
         <!-- Menu Bootstrap -->
-        <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
+        <nav class=\"navbar navbar-expand-lg bg-light\">
             <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                 <span class=\"navbar-toggler-icon\"></span>
             </button>
@@ -273,7 +284,7 @@ class __TwigTemplate_b721e97a1436c96bf39255c8530c0bc40943bd4ee4de62dad95443ab782
                         <a class=\"nav-link\" href=\"{{path('produits')}}\">{{ 'Produit.produits'|trans }}</a>
                     </li>
                 </ul>
-                <a class=\"nav-link\" href=\"#\">Mon Compte</a>
+                <a class=\"nav-link\" href=\"{{path('utilisateur')}}\">Mon Compte</a>
             </div>
         </nav>
 

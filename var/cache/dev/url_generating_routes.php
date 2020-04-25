@@ -20,4 +20,5 @@ return [
     'produits' => [[], ['_controller' => 'App\\Controller\\ProduitsController::index'], [], [['text', '/produits']], [], []],
     'produit_view' => [['id'], ['_controller' => 'App\\Controller\\ProduitsController::produit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/produits']], [], []],
     'produit_delete' => [['id'], ['_controller' => 'App\\Controller\\ProduitsController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/produits/delete']], [], []],
+    'utilisateur' => [[], ['_controller' => 'App\\Controller\\UtilisateurController::index'], [], [['text', '/utilisateur']], [], []],
 ];

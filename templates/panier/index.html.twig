@@ -16,8 +16,8 @@
                     <th></th>
                 </tr>
             </thead>
+            
             <tbody>
-
             {% set prix_total = 0 %}
             {% set prix_qte = 0 %}
 
@@ -40,18 +40,23 @@
                         </td>
                     </tr>
                 {% endfor %}
-
             </tbody>
-            <td class="text-muted" >{{ panier|length }} {{ 'Panier.article'|trans }}</td>
-            <td></td> <td></td>
-            <td class="font-weight-bold" >{{prix_total}} €</td>
-            <td>
-                <button type="button" class="btn btn-success">
-                    <a href="#">
-                        Payer
-                    </a>
-                </button>
-            </td>
+
+            <tbody>
+                <tr style="background-color: whitesmoke; ">
+                    <td class="text-muted" >{{ panier|length }} {{ 'Panier.article'|trans }}</td>
+                    <td></td> <td></td>
+                    <td class="font-weight-bold" >{{prix_total}} €</td>
+                    <td>
+                        <button type="button" class="btn btn-success">
+                            <a href="#">
+                                Payer
+                            </a>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+
         </table>
 
 

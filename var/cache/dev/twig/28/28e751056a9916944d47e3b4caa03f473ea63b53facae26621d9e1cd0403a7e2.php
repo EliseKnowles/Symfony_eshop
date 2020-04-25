@@ -124,13 +124,19 @@ class __TwigTemplate_da00b2cc93c794a8e24b77e79e77966f3036f4a1e7fc211717c1e2dc672
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form_panier_ajout"]) || array_key_exists("form_panier_ajout", $context) ? $context["form_panier_ajout"] : (function () { throw new RuntimeError('Variable "form_panier_ajout" does not exist.', 17, $this->source); })()), 'form');
         echo "
 
+    <h2>Modifier le Produit :</h2>
+    ";
+        // line 20
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form_produit_edit"]) || array_key_exists("form_produit_edit", $context) ? $context["form_produit_edit"] : (function () { throw new RuntimeError('Variable "form_produit_edit" does not exist.', 20, $this->source); })()), 'form');
+        echo "
+
     <button type=\"button\" class=\"btn btn-danger\">
         <a href=\"";
-        // line 20
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 20, $this->source); })()), "id", [], "any", false, false, false, 20)]), "html", null, true);
+        // line 23
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 23, $this->source); })()), "id", [], "any", false, false, false, 23)]), "html", null, true);
         echo "\">
         ";
-        // line 21
+        // line 24
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.suppr"), "html", null, true);
         echo "
         </a>
@@ -157,7 +163,7 @@ class __TwigTemplate_da00b2cc93c794a8e24b77e79e77966f3036f4a1e7fc211717c1e2dc672
 
     public function getDebugInfo()
     {
-        return array (  134 => 21,  130 => 20,  124 => 17,  120 => 16,  115 => 14,  109 => 13,  106 => 12,  100 => 10,  98 => 9,  93 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  140 => 24,  136 => 23,  130 => 20,  124 => 17,  120 => 16,  115 => 14,  109 => 13,  106 => 12,  100 => 10,  98 => 9,  93 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -179,6 +185,9 @@ class __TwigTemplate_da00b2cc93c794a8e24b77e79e77966f3036f4a1e7fc211717c1e2dc672
 
     <h2>{{ 'Produit.aupanier'|trans }}</h2>
     {{form(form_panier_ajout)}}
+
+    <h2>Modifier le Produit :</h2>
+    {{form(form_produit_edit)}}
 
     <button type=\"button\" class=\"btn btn-danger\">
         <a href=\"{{ path('produit_delete', {'id':produit.id}) }}\">
