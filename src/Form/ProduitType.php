@@ -32,7 +32,7 @@ class ProduitType extends AbstractType
                 ])
             ]
         ])
-        ->add('qte')
+        ->add('stock')
         ->add('prix')
         ->add('Ajouter', SubmitType::class)
         ;

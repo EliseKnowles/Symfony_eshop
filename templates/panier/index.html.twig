@@ -3,7 +3,9 @@
 {% block title %} {{ 'Panier.panier'|trans }} {% endblock %}
 
 {% block body %}
+<br>
 <h1>{{ 'Panier.titre'|trans }}</h1>
+<br>
 
     {% if panier is not empty %}
         <table class="table">
@@ -12,7 +14,7 @@
                     <th>{{ 'Panier.nom'|trans }}</th>
                     <th>{{ 'Panier.qte'|trans }}</th>
                     <th>{{ 'Panier.prix'|trans }}</th>
-                    <th>Prix Total</th>
+                    <th>{{ 'Panier.prixtotal'|trans }}</th>
                     <th></th>
                 </tr>
             </thead>
@@ -50,7 +52,7 @@
                     <td>
                         <button type="button" class="btn btn-success">
                             <a href="#">
-                                Payer
+                                {{ 'Panier.achat'|trans }}
                             </a>
                         </button>
                     </td>

@@ -16,6 +16,19 @@
             width: 150px;
             height: 150px;
         }
+
+        th {
+            text-align: center;
+        }
+
+        td {
+            vertical-align: middle !important;
+            text-align: center;
+        }
+
+        .form-control {
+            width: 300px;
+        }
         </style>
         {% endblock %}
 
@@ -36,7 +49,7 @@
                         <a class="nav-link" href="{{path('produits')}}">{{ 'Produit.produits'|trans }}</a>
                     </li>
                 </ul>
-                <a class="nav-link" href="{{path('utilisateur')}}">Mon Compte</a>
+                <a class="nav-link" href="#">{{ 'Compte.compte'|trans }}</a>
             </div>
         </nav>
 

@@ -1,20 +1,27 @@
 Nom: "Nom"
+Prenom: "Prénom"
+Email: "Email"
+Plain password: "Mot de passe"
 Photo: "Photo"
 Qte: "Quantité"
 Prix: "Prix"
 Ajouter: "Ajouter"
+Maj: "Mettre à jour"
 
 Produit:
     produits: "Produits"
     titre: "Liste des Produits"
     nom: "Nom"
-    description: "description"
-    qte: "Quantité"
+    description: "Description"
     prix: "Prix"
     noproduit: "Il n'y a aucun produit"
     ajout: "Ajouter un produit"
+    nouveau: "Nouveau Produit"
+    stock: "Produits en stock : "
     aupanier: "Ajouter au panier"
     suppr: "Supprimer le produit"
+    modif: "Modifier le produit"
+    retour: " << Retour à la liste"
 
 Panier:
     panier: "Panier"
@@ -22,10 +29,19 @@ Panier:
     nom: "Nom"
     qte: "Quantité"
     prix: "Prix"
+    prixtotal: "Total"
     suppr: "Supprimer"
     achat: "Payer"
     article: "articles"
     noproduit: "il n'y a aucun produit au panier"
+
+Compte: 
+    compte: "Mon Compte"
+    connexion : "Connexion"
+    deconnexion: "Vous êtes connecté en tant que "
+    connect : "Se connecter"
+    mdp: "Mot de passe"
+    newCompte: "Créer un Compte"
 
 Flash:
     produit:

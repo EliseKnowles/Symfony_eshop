@@ -35,6 +35,11 @@ class Panier
      */
     private $produit;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="panier")
+     */
+    private $commande;
+
     public function __construct($produit)
     {
         $this->setProduit($produit);
@@ -78,6 +83,18 @@ class Panier
     public function setProduit(?Produit $produit): self
     {
         $this->produit = $produit;
+
+        return $this;
+    }
+
+    public function getCommande(): ?Commande
+    {
+        return $this->commande;
+    }
+
+    public function setCommande(?Commande $commande): self
+    {
+        $this->commande = $commande;
 
         return $this;
     }

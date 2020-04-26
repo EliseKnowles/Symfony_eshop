@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -26,10 +28,21 @@ class Commande
      */
     private $etat;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Panier", mappedBy="commande")
+     */
+    private $panier;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="commande")
+     */
+    private $user;
+
     public function __construct()
     {
         $this->setDateAchat(new \DateTime);
         $this->setEtat(false);
+        $this->panier = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -57,6 +70,49 @@ class Commande
     public function setEtat(bool $etat): self
     {
         $this->etat = $etat;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Panier[]
+     */
+    public function getPanier(): Collection
+    {
+        return $this->panier;
+    }
+
+    public function addPanier(Panier $panier): self
+    {
+        if (!$this->panier->contains($panier)) {
+            $this->panier[] = $panier;
+            $panier->setCommande($this);
+        }
+
+        return $this;
+    }
+
+    public function removePanier(Panier $panier): self
+    {
+        if ($this->panier->contains($panier)) {
+            $this->panier->removeElement($panier);
+            // set the owning side to null (unless already changed)
+            if ($panier->getCommande() === $this) {
+                $panier->setCommande(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

@@ -3,16 +3,17 @@
 {% block title %} {{ 'Produit.produits'|trans }} {% endblock %}
 
 {% block body %}
+<br>
 <h1>{{ 'Produit.titre'|trans }}</h1>
-
+<br>
     {% if produits is not empty %}
         <table class="table">
             <thead>
                 <tr>
-                    <th>Photo</th>
+                    <th>{{ 'Photo'|trans }}</th>
                     <th>{{ 'Produit.nom'|trans }}</th>
-                    <th>Description</th>
-                    <th>{{ 'Produit.qte'|trans }}</th>
+                    <th>{{ 'Produit.description'|trans }}</th>
+                    <th>{{ 'Qte'|trans }}</th>
                     <th>{{ 'Produit.prix'|trans }}</th>
                 </tr>
             </thead>
@@ -30,7 +31,7 @@
                             </a>
                         </td>
                         <td>{{produit.description}}</td>
-                        <td>{{produit.qte}}</td>
+                        <td>{{produit.stock}}</td>
                         <td>{{produit.prix}} €</td>
                     </tr>
                 {% endfor %}
@@ -41,7 +42,10 @@
         <p>{{ 'Produit.noproduit'|trans }}</p>
     {% endif %}
 
-    <h2>{{ 'Produit.ajout'|trans }}</h2>
-    {{form(form_produit_ajout)}}
+        <hr>
+        <button type="button" class="btn btn-warning">
+            <a href="{{ path('produit_new') }}">{{ 'Produit.ajout'|trans }}</a>
+        </button>
+
 
 {% endblock %}

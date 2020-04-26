@@ -87,75 +87,83 @@ class __TwigTemplate_2cd58b2655331d1e8d0987c23d714f868252abed9bc2385ef1ef0ee4663
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<h1>";
+        echo "<br>
+<h1>";
+        // line 7
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.titre"), "html", null, true);
         echo "</h1>
-
+<br>
     ";
-        // line 8
-        if ( !twig_test_empty((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 8, $this->source); })()))) {
-            // line 9
+        // line 9
+        if ( !twig_test_empty((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 9, $this->source); })()))) {
+            // line 10
             echo "        <table class=\"table\">
             <thead>
                 <tr>
-                    <th>Photo</th>
                     <th>";
             // line 13
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Photo"), "html", null, true);
+            echo "</th>
+                    <th>";
+            // line 14
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.nom"), "html", null, true);
             echo "</th>
-                    <th>Description</th>
                     <th>";
             // line 15
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.qte"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.description"), "html", null, true);
             echo "</th>
                     <th>";
             // line 16
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Qte"), "html", null, true);
+            echo "</th>
+                    <th>";
+            // line 17
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.prix"), "html", null, true);
             echo "</th>
                 </tr>
             </thead>
             <tbody>
                 ";
-            // line 20
+            // line 21
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 20, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 21, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["produit"]) {
-                // line 21
+                // line 22
                 echo "                    <tr>
                         <td>
                             ";
-                // line 23
-                if ( !(null === twig_get_attribute($this->env, $this->source, $context["produit"], "photo", [], "any", false, false, false, 23))) {
-                    // line 24
+                // line 24
+                if ( !(null === twig_get_attribute($this->env, $this->source, $context["produit"], "photo", [], "any", false, false, false, 24))) {
+                    // line 25
                     echo "                                <img src=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("/uploads/" . twig_get_attribute($this->env, $this->source, $context["produit"], "photo", [], "any", false, false, false, 24))), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("/uploads/" . twig_get_attribute($this->env, $this->source, $context["produit"], "photo", [], "any", false, false, false, 25))), "html", null, true);
                     echo "\">
                             ";
                 }
-                // line 26
+                // line 27
                 echo "                        </td>
                         <td>
                             <a href=\"";
-                // line 28
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_view", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 28)]), "html", null, true);
+                // line 29
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_view", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 29)]), "html", null, true);
                 echo "\">
                                 ";
-                // line 29
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 29), "html", null, true);
+                // line 30
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 30), "html", null, true);
                 echo "
                             </a>
                         </td>
                         <td>";
-                // line 32
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "description", [], "any", false, false, false, 32), "html", null, true);
-                echo "</td>
-                        <td>";
                 // line 33
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "qte", [], "any", false, false, false, 33), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "description", [], "any", false, false, false, 33), "html", null, true);
                 echo "</td>
                         <td>";
                 // line 34
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 34), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "stock", [], "any", false, false, false, 34), "html", null, true);
+                echo "</td>
+                        <td>";
+                // line 35
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 35), "html", null, true);
                 echo " €</td>
                     </tr>
                 ";
@@ -163,28 +171,30 @@ class __TwigTemplate_2cd58b2655331d1e8d0987c23d714f868252abed9bc2385ef1ef0ee4663
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['produit'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 37
+            // line 38
             echo "            </tbody>
         </table>
 
     ";
         } else {
-            // line 41
+            // line 42
             echo "        <p>";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.noproduit"), "html", null, true);
             echo "</p>
     ";
         }
-        // line 43
-        echo "
-    <h2>";
         // line 44
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.ajout"), "html", null, true);
-        echo "</h2>
-    ";
-        // line 45
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form_produit_ajout"]) || array_key_exists("form_produit_ajout", $context) ? $context["form_produit_ajout"] : (function () { throw new RuntimeError('Variable "form_produit_ajout" does not exist.', 45, $this->source); })()), 'form');
         echo "
+        <hr>
+        <button type=\"button\" class=\"btn btn-warning\">
+            <a href=\"";
+        // line 47
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_new");
+        echo "\">";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.ajout"), "html", null, true);
+        echo "</a>
+        </button>
+
 
 ";
         
@@ -207,7 +217,7 @@ class __TwigTemplate_2cd58b2655331d1e8d0987c23d714f868252abed9bc2385ef1ef0ee4663
 
     public function getDebugInfo()
     {
-        return array (  186 => 45,  182 => 44,  179 => 43,  173 => 41,  167 => 37,  158 => 34,  154 => 33,  150 => 32,  144 => 29,  140 => 28,  136 => 26,  130 => 24,  128 => 23,  124 => 21,  120 => 20,  113 => 16,  109 => 15,  104 => 13,  98 => 9,  96 => 8,  90 => 6,  80 => 5,  59 => 3,  36 => 1,);
+        return array (  192 => 47,  187 => 44,  181 => 42,  175 => 38,  166 => 35,  162 => 34,  158 => 33,  152 => 30,  148 => 29,  144 => 27,  138 => 25,  136 => 24,  132 => 22,  128 => 21,  121 => 17,  117 => 16,  113 => 15,  109 => 14,  105 => 13,  100 => 10,  98 => 9,  93 => 7,  90 => 6,  80 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -217,16 +227,17 @@ class __TwigTemplate_2cd58b2655331d1e8d0987c23d714f868252abed9bc2385ef1ef0ee4663
 {% block title %} {{ 'Produit.produits'|trans }} {% endblock %}
 
 {% block body %}
+<br>
 <h1>{{ 'Produit.titre'|trans }}</h1>
-
+<br>
     {% if produits is not empty %}
         <table class=\"table\">
             <thead>
                 <tr>
-                    <th>Photo</th>
+                    <th>{{ 'Photo'|trans }}</th>
                     <th>{{ 'Produit.nom'|trans }}</th>
-                    <th>Description</th>
-                    <th>{{ 'Produit.qte'|trans }}</th>
+                    <th>{{ 'Produit.description'|trans }}</th>
+                    <th>{{ 'Qte'|trans }}</th>
                     <th>{{ 'Produit.prix'|trans }}</th>
                 </tr>
             </thead>
@@ -244,7 +255,7 @@ class __TwigTemplate_2cd58b2655331d1e8d0987c23d714f868252abed9bc2385ef1ef0ee4663
                             </a>
                         </td>
                         <td>{{produit.description}}</td>
-                        <td>{{produit.qte}}</td>
+                        <td>{{produit.stock}}</td>
                         <td>{{produit.prix}} €</td>
                     </tr>
                 {% endfor %}
@@ -255,8 +266,11 @@ class __TwigTemplate_2cd58b2655331d1e8d0987c23d714f868252abed9bc2385ef1ef0ee4663
         <p>{{ 'Produit.noproduit'|trans }}</p>
     {% endif %}
 
-    <h2>{{ 'Produit.ajout'|trans }}</h2>
-    {{form(form_produit_ajout)}}
+        <hr>
+        <button type=\"button\" class=\"btn btn-warning\">
+            <a href=\"{{ path('produit_new') }}\">{{ 'Produit.ajout'|trans }}</a>
+        </button>
+
 
 {% endblock %}", "produits/index.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_commercev2/templates/produits/index.html.twig");
     }

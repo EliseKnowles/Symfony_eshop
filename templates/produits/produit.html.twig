@@ -10,18 +10,25 @@
         <img src="{{ asset('uploads/' ~ produit.photo) }}">
     {% endif %}
 
-    <p>{{ 'Produit.qte'|trans }} : {{ produit.qte }}</p>
+    <p>{{ 'Produit.stock'|trans }} {{ produit.stock }}</p>
     <p>{{ produit.prix }} €</p>
 
+    <br>
     <h2>{{ 'Produit.aupanier'|trans }}</h2>
     {{form(form_panier_ajout)}}
 
-    <h2>Modifier le Produit :</h2>
+    {% if is_granted('ROLE_ADMIN') %}
+        <hr>
+        <button type="button" class="btn btn-warning">
+            <a href="{{ path('edit_produit', {'id': produit.id}) }}">{{ 'Produit.modif'|trans }}</a>
+        </button>
 
-    <button type="button" class="btn btn-danger">
-        <a href="{{ path('produit_delete', {'id':produit.id}) }}">
-        {{ 'Produit.suppr'|trans }}
-        </a>
-    </button>
+        <button type="button" class="btn btn-danger">
+            <a href="{{ path('produit_delete', {'id':produit.id}) }}">
+                {{ 'Produit.suppr'|trans }}
+            </a>
+        </button>
+    {% endif %}
+
 
 {% endblock %}

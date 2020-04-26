@@ -66,10 +66,10 @@ class Produit extends \App\Entity\Produit implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'photo', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'qte', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'prix', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'panier', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'description'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'photo', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'stock', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'prix', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'panier'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'photo', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'qte', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'prix', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'panier', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'description'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'photo', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'stock', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'prix', '' . "\0" . 'App\\Entity\\Produit' . "\0" . 'panier'];
     }
 
     /**
@@ -216,6 +216,28 @@ class Produit extends \App\Entity\Produit implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
+    public function getDescription(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDescription', []);
+
+        return parent::getDescription();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDescription(string $description): \App\Entity\Produit
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDescription', [$description]);
+
+        return parent::setDescription($description);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getPhoto(): ?string
     {
 
@@ -238,23 +260,23 @@ class Produit extends \App\Entity\Produit implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getQte(): ?int
+    public function getStock(): ?int
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getQte', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStock', []);
 
-        return parent::getQte();
+        return parent::getStock();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setQte(int $qte): \App\Entity\Produit
+    public function setStock(int $stock): \App\Entity\Produit
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setQte', [$qte]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setStock', [$stock]);
 
-        return parent::setQte($qte);
+        return parent::setStock($stock);
     }
 
     /**
@@ -321,28 +343,6 @@ class Produit extends \App\Entity\Produit implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
 
         return parent::__toString();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getDescription(): ?string
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDescription', []);
-
-        return parent::getDescription();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setDescription(string $description): \App\Entity\Produit
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDescription', [$description]);
-
-        return parent::setDescription($description);
     }
 
 }

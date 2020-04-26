@@ -1,20 +1,27 @@
 Nom: "Name"
+Prenom: "Firstname"
+Email: "Email"
+Plain password: "Password"
 Photo: "Photo"
 Qte: "Quantity"
 Prix: "Price"
 Ajouter: "Add"
+Maj: "Update"
 
 Produit:
     produits: "Products"
     titre: "Product List"
     nom: "Name"
-    description: "description"
-    qte: "Quantity"
+    description: "Description"
     prix: "Price"
     noproduit: "There is no product yet"
-    ajout: "Add new product"
+    ajout: "Add a new product"
+    nouveau: "New Product"
+    stock: "Products in stock : "
     aupanier: "Add to shopping bag"
     suppr: "Delete the product"
+    modif: "Edit Product"
+    retour: " << Back to List"
 
 Panier:
     panier: "ShoppingBag"
@@ -22,10 +29,19 @@ Panier:
     nom: "Name"
     qte: "Quantity"
     prix: "Price"
+    prixtotal: "Total"
     suppr: "Delete"
     achat: "Buy"
     article: "products"
     noproduit: "No products in the shopping bag yet"
+
+Compte: 
+    compte: "My Account"
+    connexion : "Log-In"
+    deconnexion: "You are logged in as "
+    connect : "Sign in"
+    mdp: "password"
+    newCompte: "Create an Account"
 
 Flash:
     produit:
