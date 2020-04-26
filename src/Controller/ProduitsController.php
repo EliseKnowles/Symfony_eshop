@@ -83,7 +83,7 @@ class ProduitsController extends AbstractController
 
     public function produit(Produit $produit=null, Request $request, TranslatorInterface $translator){
 
-        // ajout au panier
+        // Ajout au panier
         if($produit != null){
             $panier = new Panier($produit);
             $form = $this->createForm(PanierType::class, $panier);

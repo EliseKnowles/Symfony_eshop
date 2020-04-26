@@ -55,3 +55,10 @@ Flash:
     panier:
         suppr: "Produit supprimé du panier"
         erreur: "Erreur : le produit n'a pas pu être supprimé"
+
+Erreur:
+    erreur: "Une erreur est survenue, merci de réessayer ultérieurement."
+    retour: "<< Retour à l'acceuil "
+    droit: "Vous n'avez pas le droit d'être là"
+    introuvable: "Cette page est introuvable."
+    nofonct: "Cette page ne fonctionne pas."

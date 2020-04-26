@@ -3,6 +3,7 @@
 {% block title %}Hello User{% endblock %}
 
 {% block body %}
+    <br>
     <h1>{{user.prenom ~' '~ user.nom}}</h1>
 
     {{ form_start(form) }}
@@ -14,5 +15,8 @@
 
         <button class="btn btn-lg btn-primary">{{ 'Maj'|trans }}</button>
         {{ form_end(form) }}
+
+    <hr>
+    <h2>Mes commandes</h2>
 
 {% endblock %}

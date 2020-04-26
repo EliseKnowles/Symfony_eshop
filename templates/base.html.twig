@@ -42,14 +42,34 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
+
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{path('panier')}}">{{ 'Panier.panier'|trans }}</a>
                     </li>
+                {% endif %}
+                
                     <li class="nav-item">
                         <a class="nav-link" href="{{path('produits')}}">{{ 'Produit.produits'|trans }}</a>
                     </li>
                 </ul>
-                <a class="nav-link" href="#">{{ 'Compte.compte'|trans }}</a>
+
+                {% if is_granted('ROLE_SUPER_ADMIN') %}
+                <!-- Page Admin pour le SUPER_ADMIN-->
+                    <a class="nav-link" href="#">Admin</a>
+                {% endif %}
+
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <!-- Accès a la page Compte si l'utilisateur est connecté -->
+                    <a class="nav-link" href="">{{ 'Compte.compte'|trans }}</a>
+                {% endif %}
+
+                {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <!-- Page connection ou Créer un compte si l'utilisaateur n'est pas connecté ou anonyme-->
+                    <a class="nav-link" href="{{path('app_login')}}">{{ 'Compte.connect'|trans }}</a>
+                    <a class="nav-link" href="{{path('app_register')}}">{{ 'Compte.newCompte'|trans }}</a>
+                {% endif %}
+
             </div>
         </nav>
 

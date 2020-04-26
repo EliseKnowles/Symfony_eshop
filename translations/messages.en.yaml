@@ -55,3 +55,10 @@ Flash:
     panier:
         suppr: "Product deleted from shopping bag"
         erreur: "Unabled to deleted this product"
+
+Erreur: 
+    erreur: "An error has occured, please try again later. " 
+    retour: "<< Back to Home Page "
+    droit: "You don't have the rights to be there."
+    introuvable: "This page can't be found"
+    nofonct: "This page doesn't work"

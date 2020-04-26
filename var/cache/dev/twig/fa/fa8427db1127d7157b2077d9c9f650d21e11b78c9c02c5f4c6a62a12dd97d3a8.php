@@ -122,6 +122,7 @@ class __TwigTemplate_900a8c133bf237a2ba1c84fde9a4d5c2d41efd84c74bd4e96041b386e5d
         // line 16
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 16, $this->source); })()), 'form_end');
         echo "
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -164,6 +165,7 @@ class __TwigTemplate_900a8c133bf237a2ba1c84fde9a4d5c2d41efd84c74bd4e96041b386e5d
 
         <button class=\"btn btn-lg btn-primary\">{{ 'Compte.connect'|trans }}</button>
     {{ form_end(registrationForm) }}
+
 {% endblock %}
 ", "registration/register.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_commercev2/templates/registration/register.html.twig");
     }

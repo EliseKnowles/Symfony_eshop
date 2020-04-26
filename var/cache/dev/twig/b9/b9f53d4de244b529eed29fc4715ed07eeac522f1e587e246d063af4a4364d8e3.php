@@ -185,17 +185,23 @@ class __TwigTemplate_2cd58b2655331d1e8d0987c23d714f868252abed9bc2385ef1ef0ee4663
         }
         // line 44
         echo "
-        <hr>
+    ";
+        // line 45
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 46
+            echo "        <hr>
         <button type=\"button\" class=\"btn btn-warning\">
             <a href=\"";
-        // line 47
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_new");
-        echo "\">";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.ajout"), "html", null, true);
-        echo "</a>
+            // line 48
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_new");
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.ajout"), "html", null, true);
+            echo "</a>
         </button>
-
-
+    ";
+        }
+        // line 51
+        echo "
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -217,7 +223,7 @@ class __TwigTemplate_2cd58b2655331d1e8d0987c23d714f868252abed9bc2385ef1ef0ee4663
 
     public function getDebugInfo()
     {
-        return array (  192 => 47,  187 => 44,  181 => 42,  175 => 38,  166 => 35,  162 => 34,  158 => 33,  152 => 30,  148 => 29,  144 => 27,  138 => 25,  136 => 24,  132 => 22,  128 => 21,  121 => 17,  117 => 16,  113 => 15,  109 => 14,  105 => 13,  100 => 10,  98 => 9,  93 => 7,  90 => 6,  80 => 5,  59 => 3,  36 => 1,);
+        return array (  204 => 51,  196 => 48,  192 => 46,  190 => 45,  187 => 44,  181 => 42,  175 => 38,  166 => 35,  162 => 34,  158 => 33,  152 => 30,  148 => 29,  144 => 27,  138 => 25,  136 => 24,  132 => 22,  128 => 21,  121 => 17,  117 => 16,  113 => 15,  109 => 14,  105 => 13,  100 => 10,  98 => 9,  93 => 7,  90 => 6,  80 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -266,11 +272,12 @@ class __TwigTemplate_2cd58b2655331d1e8d0987c23d714f868252abed9bc2385ef1ef0ee4663
         <p>{{ 'Produit.noproduit'|trans }}</p>
     {% endif %}
 
+    {% if is_granted('ROLE_ADMIN') %}
         <hr>
         <button type=\"button\" class=\"btn btn-warning\">
             <a href=\"{{ path('produit_new') }}\">{{ 'Produit.ajout'|trans }}</a>
         </button>
-
+    {% endif %}
 
 {% endblock %}", "produits/index.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_commercev2/templates/produits/index.html.twig");
     }

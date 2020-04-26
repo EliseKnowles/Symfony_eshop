@@ -13,9 +13,11 @@
     <p>{{ 'Produit.stock'|trans }} {{ produit.stock }}</p>
     <p>{{ produit.prix }} €</p>
 
-    <br>
-    <h2>{{ 'Produit.aupanier'|trans }}</h2>
-    {{form(form_panier_ajout)}}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <br>
+        <h2>{{ 'Produit.aupanier'|trans }}</h2>
+        {{form(form_panier_ajout)}}
+    {% endif %}
 
     {% if is_granted('ROLE_ADMIN') %}
         <hr>

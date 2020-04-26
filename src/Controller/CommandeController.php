@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Commande;
+use App\Entity\User;
 use App\Repository\CommandeRepository;
 use App\Repository\PanierRepository;
+use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -28,15 +31,20 @@ class CommandeController extends AbstractController
         
         $commande = $commandeRepository->findOneBy([
             'user' => $this->getUser(), 
-            'state' => false ]);
+            'etat' => false ]);
 
         $pdo = $this->getDoctrine()->getManager();
+        $user = $pdo->getRepository(User::class)->findOneBy([]);
+        $commande = new Commande();
 
+        $commande->getUser($user->getId());
         $commande->setEtat(true);
-        $commande->setDateAchat(new\Datetime());
+        $commande->setDateAchat(new \DateTime());
 
         $pdo->persist($commande);
         $pdo->flush();
+
+        $this->addFlash('success', 'Commande validé');
 
         return $this->redirectToRoute('produits');
     }

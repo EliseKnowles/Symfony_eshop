@@ -115,25 +115,32 @@ class __TwigTemplate_da00b2cc93c794a8e24b77e79e77966f3036f4a1e7fc211717c1e2dc672
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 14, $this->source); })()), "prix", [], "any", false, false, false, 14), "html", null, true);
         echo " €</p>
 
-    <br>
-    <h2>";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.aupanier"), "html", null, true);
-        echo "</h2>
     ";
-        // line 18
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form_panier_ajout"]) || array_key_exists("form_panier_ajout", $context) ? $context["form_panier_ajout"] : (function () { throw new RuntimeError('Variable "form_panier_ajout" does not exist.', 18, $this->source); })()), 'form');
+        // line 16
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 17
+            echo "        <br>
+        <h2>";
+            // line 18
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.aupanier"), "html", null, true);
+            echo "</h2>
+        ";
+            // line 19
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form_panier_ajout"]) || array_key_exists("form_panier_ajout", $context) ? $context["form_panier_ajout"] : (function () { throw new RuntimeError('Variable "form_panier_ajout" does not exist.', 19, $this->source); })()), 'form');
+            echo "
+    ";
+        }
+        // line 21
         echo "
-
     ";
-        // line 20
+        // line 22
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 21
+            // line 23
             echo "        <hr>
         <button type=\"button\" class=\"btn btn-warning\">
             <a href=\"";
-            // line 23
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("edit_produit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 23, $this->source); })()), "id", [], "any", false, false, false, 23)]), "html", null, true);
+            // line 25
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("edit_produit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 25, $this->source); })()), "id", [], "any", false, false, false, 25)]), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.modif"), "html", null, true);
             echo "</a>
@@ -141,18 +148,18 @@ class __TwigTemplate_da00b2cc93c794a8e24b77e79e77966f3036f4a1e7fc211717c1e2dc672
 
         <button type=\"button\" class=\"btn btn-danger\">
             <a href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 27, $this->source); })()), "id", [], "any", false, false, false, 27)]), "html", null, true);
+            // line 29
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 29, $this->source); })()), "id", [], "any", false, false, false, 29)]), "html", null, true);
             echo "\">
                 ";
-            // line 28
+            // line 30
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.suppr"), "html", null, true);
             echo "
             </a>
         </button>
     ";
         }
-        // line 32
+        // line 34
         echo "
 
 ";
@@ -176,7 +183,7 @@ class __TwigTemplate_da00b2cc93c794a8e24b77e79e77966f3036f4a1e7fc211717c1e2dc672
 
     public function getDebugInfo()
     {
-        return array (  156 => 32,  149 => 28,  145 => 27,  136 => 23,  132 => 21,  130 => 20,  125 => 18,  121 => 17,  115 => 14,  109 => 13,  106 => 12,  100 => 10,  98 => 9,  93 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  163 => 34,  156 => 30,  152 => 29,  143 => 25,  139 => 23,  137 => 22,  134 => 21,  129 => 19,  125 => 18,  122 => 17,  120 => 16,  115 => 14,  109 => 13,  106 => 12,  100 => 10,  98 => 9,  93 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -196,9 +203,11 @@ class __TwigTemplate_da00b2cc93c794a8e24b77e79e77966f3036f4a1e7fc211717c1e2dc672
     <p>{{ 'Produit.stock'|trans }} {{ produit.stock }}</p>
     <p>{{ produit.prix }} €</p>
 
-    <br>
-    <h2>{{ 'Produit.aupanier'|trans }}</h2>
-    {{form(form_panier_ajout)}}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <br>
+        <h2>{{ 'Produit.aupanier'|trans }}</h2>
+        {{form(form_panier_ajout)}}
+    {% endif %}
 
     {% if is_granted('ROLE_ADMIN') %}
         <hr>

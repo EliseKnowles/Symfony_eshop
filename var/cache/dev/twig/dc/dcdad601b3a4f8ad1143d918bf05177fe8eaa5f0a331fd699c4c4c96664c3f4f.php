@@ -70,42 +70,92 @@ class __TwigTemplate_b721e97a1436c96bf39255c8530c0bc40943bd4ee4de62dad95443ab782
             </button>
             <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
                 <ul class=\"navbar-nav mr-auto\">
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"";
+
+                ";
         // line 46
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("panier");
-        echo "\">";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Panier.panier"), "html", null, true);
-        echo "</a>
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 47
+            echo "                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"";
+            // line 48
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("panier");
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Panier.panier"), "html", null, true);
+            echo "</a>
                     </li>
+                ";
+        }
+        // line 51
+        echo "                
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
-        // line 49
+        // line 53
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produits");
         echo "\">";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.produits"), "html", null, true);
         echo "</a>
                     </li>
                 </ul>
-                <a class=\"nav-link\" href=\"#\">";
-        // line 52
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Compte.compte"), "html", null, true);
-        echo "</a>
+
+                ";
+        // line 57
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_SUPER_ADMIN")) {
+            // line 58
+            echo "                <!-- Page Admin pour le SUPER_ADMIN-->
+                    <a class=\"nav-link\" href=\"#\">Admin</a>
+                ";
+        }
+        // line 61
+        echo "
+                ";
+        // line 62
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 63
+            echo "                <!-- Accès a la page Compte si l'utilisateur est connecté -->
+                    <a class=\"nav-link\" href=\"\">";
+            // line 64
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Compte.compte"), "html", null, true);
+            echo "</a>
+                ";
+        }
+        // line 66
+        echo "
+                ";
+        // line 67
+        if ( !$this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 68
+            echo "                <!-- Page connection ou Créer un compte si l'utilisaateur n'est pas connecté ou anonyme-->
+                    <a class=\"nav-link\" href=\"";
+            // line 69
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Compte.connect"), "html", null, true);
+            echo "</a>
+                    <a class=\"nav-link\" href=\"";
+            // line 70
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Compte.newCompte"), "html", null, true);
+            echo "</a>
+                ";
+        }
+        // line 72
+        echo "
             </div>
         </nav>
 
         <div class=\"container\">
             ";
-        // line 57
+        // line 77
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 57, $this->source); })()), "flashes", [], "any", false, false, false, 57));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 77, $this->source); })()), "flashes", [], "any", false, false, false, 77));
         foreach ($context['_seq'] as $context["type"] => $context["messages"]) {
-            // line 58
+            // line 78
             echo "                ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($context["messages"]);
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                // line 59
+                // line 79
                 echo "                    <p class=\"alert alert-";
                 echo twig_escape_filter($this->env, $context["type"], "html", null, true);
                 echo "\">";
@@ -116,24 +166,24 @@ class __TwigTemplate_b721e97a1436c96bf39255c8530c0bc40943bd4ee4de62dad95443ab782
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 61
+            // line 81
             echo "            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['type'], $context['messages'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 62
+        // line 82
         echo "
             ";
-        // line 63
+        // line 83
         $this->displayBlock('body', $context, $blocks);
-        // line 64
+        // line 84
         echo "        </div>
         
         ";
-        // line 66
+        // line 86
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 67
+        // line 87
         echo "    </body>
 </html>";
         
@@ -206,7 +256,7 @@ class __TwigTemplate_b721e97a1436c96bf39255c8530c0bc40943bd4ee4de62dad95443ab782
 
     }
 
-    // line 63
+    // line 83
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -224,7 +274,7 @@ class __TwigTemplate_b721e97a1436c96bf39255c8530c0bc40943bd4ee4de62dad95443ab782
 
     }
 
-    // line 66
+    // line 86
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -254,7 +304,7 @@ class __TwigTemplate_b721e97a1436c96bf39255c8530c0bc40943bd4ee4de62dad95443ab782
 
     public function getDebugInfo()
     {
-        return array (  228 => 66,  210 => 63,  177 => 10,  167 => 9,  148 => 5,  137 => 67,  135 => 66,  131 => 64,  129 => 63,  126 => 62,  120 => 61,  109 => 59,  104 => 58,  100 => 57,  92 => 52,  84 => 49,  76 => 46,  62 => 34,  60 => 9,  53 => 5,  47 => 1,);
+        return array (  278 => 86,  260 => 83,  227 => 10,  217 => 9,  198 => 5,  187 => 87,  185 => 86,  181 => 84,  179 => 83,  176 => 82,  170 => 81,  159 => 79,  154 => 78,  150 => 77,  143 => 72,  136 => 70,  130 => 69,  127 => 68,  125 => 67,  122 => 66,  117 => 64,  114 => 63,  112 => 62,  109 => 61,  104 => 58,  102 => 57,  93 => 53,  89 => 51,  81 => 48,  78 => 47,  76 => 46,  62 => 34,  60 => 9,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -303,14 +353,34 @@ class __TwigTemplate_b721e97a1436c96bf39255c8530c0bc40943bd4ee4de62dad95443ab782
             </button>
             <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
                 <ul class=\"navbar-nav mr-auto\">
+
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"{{path('panier')}}\">{{ 'Panier.panier'|trans }}</a>
                     </li>
+                {% endif %}
+                
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"{{path('produits')}}\">{{ 'Produit.produits'|trans }}</a>
                     </li>
                 </ul>
-                <a class=\"nav-link\" href=\"#\">{{ 'Compte.compte'|trans }}</a>
+
+                {% if is_granted('ROLE_SUPER_ADMIN') %}
+                <!-- Page Admin pour le SUPER_ADMIN-->
+                    <a class=\"nav-link\" href=\"#\">Admin</a>
+                {% endif %}
+
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <!-- Accès a la page Compte si l'utilisateur est connecté -->
+                    <a class=\"nav-link\" href=\"\">{{ 'Compte.compte'|trans }}</a>
+                {% endif %}
+
+                {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <!-- Page connection ou Créer un compte si l'utilisaateur n'est pas connecté ou anonyme-->
+                    <a class=\"nav-link\" href=\"{{path('app_login')}}\">{{ 'Compte.connect'|trans }}</a>
+                    <a class=\"nav-link\" href=\"{{path('app_register')}}\">{{ 'Compte.newCompte'|trans }}</a>
+                {% endif %}
+
             </div>
         </nav>
 

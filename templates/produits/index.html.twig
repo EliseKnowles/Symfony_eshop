@@ -42,10 +42,11 @@
         <p>{{ 'Produit.noproduit'|trans }}</p>
     {% endif %}
 
+    {% if is_granted('ROLE_ADMIN') %}
         <hr>
         <button type="button" class="btn btn-warning">
             <a href="{{ path('produit_new') }}">{{ 'Produit.ajout'|trans }}</a>
         </button>
-
+    {% endif %}
 
 {% endblock %}

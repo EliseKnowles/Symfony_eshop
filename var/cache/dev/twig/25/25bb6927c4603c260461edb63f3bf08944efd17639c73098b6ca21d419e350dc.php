@@ -199,7 +199,10 @@ class __TwigTemplate_d8c72a1aa2d4ae8bcf1cb322d1a00136fa861e10c51ea3f1a47b9a359f4
             echo " €</td>
                     <td>
                         <button type=\"button\" class=\"btn btn-success\">
-                            <a href=\"#\">
+                            <a href=\"";
+            // line 54
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("commande_achat");
+            echo "\">
                                 ";
             // line 55
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Panier.achat"), "html", null, true);
@@ -245,7 +248,7 @@ class __TwigTemplate_d8c72a1aa2d4ae8bcf1cb322d1a00136fa861e10c51ea3f1a47b9a359f4
 
     public function getDebugInfo()
     {
-        return array (  225 => 68,  219 => 66,  205 => 55,  198 => 51,  191 => 49,  185 => 45,  173 => 39,  169 => 38,  162 => 34,  157 => 32,  153 => 31,  149 => 30,  146 => 29,  144 => 28,  139 => 27,  135 => 26,  132 => 25,  129 => 24,  127 => 23,  118 => 17,  114 => 16,  110 => 15,  106 => 14,  101 => 11,  99 => 10,  93 => 7,  90 => 6,  80 => 5,  59 => 3,  36 => 1,);
+        return array (  228 => 68,  222 => 66,  208 => 55,  204 => 54,  198 => 51,  191 => 49,  185 => 45,  173 => 39,  169 => 38,  162 => 34,  157 => 32,  153 => 31,  149 => 30,  146 => 29,  144 => 28,  139 => 27,  135 => 26,  132 => 25,  129 => 24,  127 => 23,  118 => 17,  114 => 16,  110 => 15,  106 => 14,  101 => 11,  99 => 10,  93 => 7,  90 => 6,  80 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -303,7 +306,7 @@ class __TwigTemplate_d8c72a1aa2d4ae8bcf1cb322d1a00136fa861e10c51ea3f1a47b9a359f4
                     <td class=\"font-weight-bold\" >{{prix_total}} €</td>
                     <td>
                         <button type=\"button\" class=\"btn btn-success\">
-                            <a href=\"#\">
+                            <a href=\"{{ path('commande_achat') }}\">
                                 {{ 'Panier.achat'|trans }}
                             </a>
                         </button>

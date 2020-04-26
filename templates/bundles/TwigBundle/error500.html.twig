@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1>Oops</h1>
+	<p>{{ 'Erreur.nofonct'|trans }}</p>
+	<p><a href="{{ path('produits') }}">{{ 'Erreur.retour'|trans }}</a></p>
+{% endblock %}

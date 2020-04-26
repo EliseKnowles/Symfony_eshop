@@ -41,5 +41,5 @@ security:
         - { path: ^/produits/new, roles: ROLE_ADMIN }
         - { path: ^/produits/edit, roles: ROLE_ADMIN }
         - { path: ^/produits/delete, roles: ROLE_ADMIN }
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: ROLE_SUPER_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
