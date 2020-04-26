@@ -1289,6 +1289,6 @@ $context["voter_detail"], "vote", [], "array", false, false, false, 353), twig_c
         </table>
     {% endif %}
 {% endblock %}
-", "@Security/Collector/security.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_panier/vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig");
+", "@Security/Collector/security.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_commercev2/vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig");
     }
 }

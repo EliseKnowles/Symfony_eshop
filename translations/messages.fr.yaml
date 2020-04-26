@@ -1,12 +1,15 @@
 Nom: "Nom"
 Prenom: "Prénom"
 Email: "Email"
+Description: "Description"
+Stock: "Stock"
 Plain password: "Mot de passe"
 Photo: "Photo"
 Qte: "Quantité"
 Prix: "Prix"
 Ajouter: "Ajouter"
 Maj: "Mettre à jour"
+Agree terms: "J'accepte les conditions d'utilisations"
 
 Produit:
     produits: "Produits"
@@ -34,12 +37,14 @@ Panier:
     achat: "Payer"
     article: "articles"
     noproduit: "il n'y a aucun produit au panier"
+    connect: "Vous devez être connecté pour accéder à votre panier"
 
 Compte: 
     compte: "Mon Compte"
     connexion : "Connexion"
     deconnexion: "Vous êtes connecté en tant que "
     connect : "Se connecter"
+    deco: "Se déconnecter"
     mdp: "Mot de passe"
     newCompte: "Créer un Compte"
 

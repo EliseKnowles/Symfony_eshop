@@ -900,6 +900,6 @@ class __TwigTemplate_82131a976da4d9683b3731cc975988fa0e42af8b816f76707b7c8d54916
         {% endautoescape %}</script>
     </div>
 {% endmacro %}
-", "@WebProfiler/Collector/time.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_panier/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.html.twig");
+", "@WebProfiler/Collector/time.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_commercev2/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.html.twig");
     }
 }

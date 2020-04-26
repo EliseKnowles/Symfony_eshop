@@ -136,7 +136,9 @@ class __TwigTemplate_8ec04ea9fd8783321700e935a4ed902a0877b7d72afcb816fbb7a527f64
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "user", [], "any", false, false, false, 21), "username", [], "any", false, false, false, 21), "html", null, true);
             echo ", <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\">Logout</a>
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Compte.deco"), "html", null, true);
+            echo "</a>
         </div>
     ";
         }
@@ -200,7 +202,7 @@ class __TwigTemplate_8ec04ea9fd8783321700e935a4ed902a0877b7d72afcb816fbb7a527f64
 
     public function getDebugInfo()
     {
-        return array (  177 => 48,  173 => 46,  167 => 33,  160 => 29,  155 => 27,  151 => 26,  147 => 25,  144 => 24,  135 => 21,  132 => 20,  130 => 19,  127 => 18,  121 => 16,  119 => 15,  116 => 14,  106 => 13,  91 => 6,  81 => 5,  60 => 3,  37 => 1,);
+        return array (  179 => 48,  175 => 46,  169 => 33,  162 => 29,  157 => 27,  153 => 26,  149 => 25,  146 => 24,  135 => 21,  132 => 20,  130 => 19,  127 => 18,  121 => 16,  119 => 15,  116 => 14,  106 => 13,  91 => 6,  81 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -225,7 +227,7 @@ class __TwigTemplate_8ec04ea9fd8783321700e935a4ed902a0877b7d72afcb816fbb7a527f64
 
     {% if app.user %}
         <div class=\"mb-3\">
-            {{ 'Compte.deconnexion'|trans }}{{ app.user.username }}, <a href=\"{{ path('app_logout') }}\">Logout</a>
+            {{ 'Compte.deconnexion'|trans }}{{ app.user.username }}, <a href=\"{{ path('app_logout') }}\">{{ 'Compte.deco'|trans }}</a>
         </div>
     {% endif %}
 

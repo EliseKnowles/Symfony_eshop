@@ -171,6 +171,6 @@ class __TwigTemplate_681d52cca1f15ce3373f7461aea79b332967476a72af7532c5488e2ac0b
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_panier/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_commercev2/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
     }
 }

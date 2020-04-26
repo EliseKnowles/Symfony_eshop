@@ -1175,6 +1175,6 @@ class __TwigTemplate_8e8d7eca8b57a4dbdf2e4c3af688c6fdaf6b053b937eb4f17a2d3073882
         <span>{{ route|default(controller) }}</span>
     {%- endif %}
 {% endmacro %}
-", "@WebProfiler/Collector/request.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_panier/vendor/symfony/web-profiler-bundle/Resources/views/Collector/request.html.twig");
+", "@WebProfiler/Collector/request.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_commercev2/vendor/symfony/web-profiler-bundle/Resources/views/Collector/request.html.twig");
     }
 }

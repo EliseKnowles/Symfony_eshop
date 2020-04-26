@@ -61,7 +61,8 @@
 
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <!-- Accès a la page Compte si l'utilisateur est connecté -->
-                    <a class="nav-link" href="">{{ 'Compte.compte'|trans }}</a>
+                    <a href="{{ path('app_logout') }}">{{ 'Compte.deco'|trans }}</a>
+                    <a class="nav-link" href="#{#{{path('user', {'id':user.id})}}#}">{{ 'Compte.compte'|trans }}</a>
                 {% endif %}
 
                 {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}

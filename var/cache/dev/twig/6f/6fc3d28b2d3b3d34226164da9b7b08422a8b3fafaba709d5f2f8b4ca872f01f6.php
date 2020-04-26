@@ -122,6 +122,6 @@ class __TwigTemplate_78cdd8d13cdaec21d77d46adfb43c481a346b15dcd741e0e95094f0d9e4
         {% endfor %}
     </tbody>
 </table>
-", "@WebProfiler/Profiler/table.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_panier/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/table.html.twig");
+", "@WebProfiler/Profiler/table.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_commercev2/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/table.html.twig");
     }
 }

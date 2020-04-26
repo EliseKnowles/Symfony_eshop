@@ -413,6 +413,6 @@ class __TwigTemplate_fc7fe4c6dcf282a91c66b204fd3703d8fab1401591f95c126a7f70a54fa
         </div>
     {% endfor %}
 {% endblock %}
-", "@Debug/Profiler/dump.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_panier/vendor/symfony/debug-bundle/Resources/views/Profiler/dump.html.twig");
+", "@Debug/Profiler/dump.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_commercev2/vendor/symfony/debug-bundle/Resources/views/Profiler/dump.html.twig");
     }
 }

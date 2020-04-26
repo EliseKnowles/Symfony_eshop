@@ -15,12 +15,14 @@ use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 class UserController extends AbstractController
 {
     /**
+     * PAGE UTILISATEUR - modifier les infos de l'user
      * @Route("/user/{id}", name="user")
      */
     public function index(User $user=null, Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, UserAuthentificatorAuthenticator $authenticator)
     {
         if($user == null){
-            return $this->redirectToRoute('login');
+            // redirection a la page login si non connecter
+            return $this->redirectToRoute('login'); 
         }
 
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -55,24 +57,5 @@ class UserController extends AbstractController
             'form' => $form->createView()
         ]);
 
-    }
-
-    /**
-    * @Route("/user/{id}/editRole", name="edit_role")
-    */
-    public function edit_role()
-    {
-        
-    $role = ['ROLE_SUPER_ADMIN'];
-    
-    $user = $this->getUser();
-    
-    $user->setRoles($role);
-    
-    $em = $this->getDoctrine()->getManager();
-    $em->persist($user);
-    $em->flush();
-    
-    return $this->redirectToRoute('produits');
     }
 }

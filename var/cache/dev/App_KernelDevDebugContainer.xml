@@ -3113,6 +3113,14 @@
         <argument>!Framework</argument>
       </call>
       <call method="addPath">
+        <argument>/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_commercev2/templates/bundles/TwigBundle</argument>
+        <argument>Twig</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_commercev2/templates/bundles/TwigBundle</argument>
+        <argument>!Twig</argument>
+      </call>
+      <call method="addPath">
         <argument>/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_commercev2/vendor/symfony/web-profiler-bundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>
@@ -4938,6 +4946,12 @@
         <argument>make:migration</argument>
       </call>
     </service>
+    <service id=".service_locator.i4.VUHX" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="panierRepository" type="service" id="App\Repository\PanierRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.m8Ulpfw" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4994,10 +5008,12 @@
         <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
       </argument>
     </service>
-    <service id=".service_locator.9z3DSoc" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.b9R68K6" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\AdminController::index" type="service" id=".service_locator.i4.VUHX"/>
         <argument key="App\Controller\CommandeController::achat" type="service" id=".service_locator.m8Ulpfw"/>
+        <argument key="App\Controller\CommandeController::index" type="service" id=".service_locator.m8Ulpfw"/>
         <argument key="App\Controller\PanierController::delete" type="service" id=".service_locator.fu0iwIA"/>
         <argument key="App\Controller\ProduitsController::delete" type="service" id=".service_locator.5Rami6h"/>
         <argument key="App\Controller\ProduitsController::edit" type="service" id=".service_locator.HtzxqlQ"/>
@@ -5477,12 +5493,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.9z3DSoc"/>
+      <argument type="service" id=".service_locator.b9R68K6"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.9z3DSoc"/>
+      <argument type="service" id=".service_locator.b9R68K6"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -5853,7 +5869,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.9z3DSoc"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.b9R68K6"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

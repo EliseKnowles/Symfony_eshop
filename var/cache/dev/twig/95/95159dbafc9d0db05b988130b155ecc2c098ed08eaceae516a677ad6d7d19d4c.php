@@ -1843,6 +1843,6 @@ class __TwigTemplate_3651ecb99c0552262237dd78fc140d0a744d1953de267ae9ee40b7996e5
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_panier/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_commercev2/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

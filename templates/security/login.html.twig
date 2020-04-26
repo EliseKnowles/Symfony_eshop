@@ -18,7 +18,7 @@
 
     {% if app.user %}
         <div class="mb-3">
-            {{ 'Compte.deconnexion'|trans }}{{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+            {{ 'Compte.deconnexion'|trans }}{{ app.user.username }}, <a href="{{ path('app_logout') }}">{{ 'Compte.deco'|trans }}</a>
         </div>
     {% endif %}
 

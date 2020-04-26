@@ -2,10 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\Commande;
 use App\Entity\Panier;
 use App\Entity\Produit;
+use App\Entity\User;
 use App\Form\PanierType;
 use App\Form\ProduitType;
+use App\Repository\CommandeRepository;
 use App\Repository\ProduitRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
@@ -38,6 +41,7 @@ class ProduitsController extends AbstractController
      */
     public function new(Request $request, TranslatorInterface $translator) : Response
     {
+        $pdo= $this->getDoctrine()->getManager();
         $produit = new Produit();
         $form = $this->createForm(ProduitType::class, $produit);
         $form->handleRequest($request);
@@ -61,15 +65,14 @@ class ProduitsController extends AbstractController
                 $produit->setPhoto($nomPhoto);
             }
 
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($produit);
-            $entityManager->flush();
+            $pdo->persist($produit);
+            $pdo->flush();
             
             return $this->redirectToRoute('produits');
             $this->addFlash("success", $translator->trans('Flash.produit.creer'));
         }
 
-        return $this->render('produits/index.html.twig', [
+        return $this->render('produits/new.html.twig', [
             'produits' => $produit,
             'form' => $form->createView()
         ]);
@@ -90,6 +93,7 @@ class ProduitsController extends AbstractController
             $form->handleRequest($request);
             if ( $form->isSubmitted() && $form->isValid() ) {
                 if ($panier->getQte() <= $produit->getStock()) {
+                    $panier->setCommande($panier->getId());
                     $pdo = $this->getDoctrine()->getManager();
                     $pdo->persist($panier);
                     $pdo->flush();

@@ -3,20 +3,57 @@
 {% block title %}Hello User{% endblock %}
 
 {% block body %}
-    <br>
-    <h1>{{user.prenom ~' '~ user.nom}}</h1>
 
-    {{ form_start(form) }}
-        {{ form_row(form.prenom) }}
-        {{ form_row(form.nom) }}
-        {{ form_row(form.email) }}
-        {{ form_row(form.plainPassword) }}
-        {{ form_row(form.agreeTerms) }}
+<br>
+<h1>{{user.prenom ~' '~ user.nom}}</h1>
 
-        <button class="btn btn-lg btn-primary">{{ 'Maj'|trans }}</button>
-        {{ form_end(form) }}
+{{ form_start(form) }}
+    {{ form_row(form.prenom) }}
+    {{ form_row(form.nom) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.plainPassword) }}
+    {{ form_row(form.agreeTerms) }}
 
-    <hr>
-    <h2>Mes commandes</h2>
+    <button class="btn btn-lg btn-primary">{{ 'Maj'|trans }}</button>
+    {{ form_end(form) }}
+
+{#
+<hr>
+<h2>Mes commandes</h2>
+    
+    {% if commande in not empty %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Numéro de Commande</th>
+                    <th>Montant</th>
+                    <th>Date</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for commande in commande %}
+                    <tr>
+                        <td>{{user.commande.id}}</td>
+                        <td>{{user.commande.montant}}</td>
+                        <td>{{user.commande.dateAchat}}</td>
+                        <td>
+                            <button type="button" class="btn btn-secondary">
+                                <a href="{{ path('commande_view', {'id':commande.id}) }}">
+                                    Voir la commande
+                                </a>
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            
+            </table>
+
+{% else %}
+    <p>{{ 'Panier.noproduit'|trans }}</p>
+{% endif %}
+#}
 
 {% endblock %}

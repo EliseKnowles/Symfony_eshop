@@ -43,10 +43,13 @@
     {% endif %}
 
     {% if is_granted('ROLE_ADMIN') %}
+    <!--accessible seulement pour les admins-->
         <hr>
         <button type="button" class="btn btn-warning">
             <a href="{{ path('produit_new') }}">{{ 'Produit.ajout'|trans }}</a>
         </button>
+        <br><br>
+        
     {% endif %}
-
+ 
 {% endblock %}

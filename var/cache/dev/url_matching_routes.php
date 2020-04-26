@@ -48,10 +48,7 @@ return [
                         .'|produits/delete/([^/]++)(*:275)'
                     .')'
                 .')'
-                .'|/user/([^/]++)(?'
-                    .'|(*:302)'
-                    .'|/editRole(*:319)'
-                .')'
+                .'|/user/([^/]++)(*:299)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -66,9 +63,8 @@ return [
         222 => [[['_route' => 'produit_view', '_controller' => 'App\\Controller\\ProduitsController::produit'], ['id'], null, null, false, true, null]],
         243 => [[['_route' => 'edit_produit', '_controller' => 'App\\Controller\\ProduitsController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
         275 => [[['_route' => 'produit_delete', '_controller' => 'App\\Controller\\ProduitsController::delete'], ['id'], null, null, false, true, null]],
-        302 => [[['_route' => 'user', '_controller' => 'App\\Controller\\UserController::index'], ['id'], null, null, false, true, null]],
-        319 => [
-            [['_route' => 'edit_role', '_controller' => 'App\\Controller\\UserController::edit_role'], ['id'], null, null, false, false, null],
+        299 => [
+            [['_route' => 'user', '_controller' => 'App\\Controller\\UserController::index'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

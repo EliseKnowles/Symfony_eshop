@@ -334,15 +334,4 @@ class Produit extends \App\Entity\Produit implements \Doctrine\ORM\Proxy\Proxy
         return parent::removePanier($panier);
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function __toString()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
-
-        return parent::__toString();
-    }
-
 }

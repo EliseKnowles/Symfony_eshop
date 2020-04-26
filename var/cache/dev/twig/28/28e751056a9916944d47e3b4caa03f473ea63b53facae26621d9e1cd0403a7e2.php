@@ -119,28 +119,30 @@ class __TwigTemplate_da00b2cc93c794a8e24b77e79e77966f3036f4a1e7fc211717c1e2dc672
         // line 16
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             // line 17
-            echo "        <br>
+            echo "    <!--Option d'ajout au panier dispo si on est connecté-->
+        <br>
         <h2>";
-            // line 18
+            // line 19
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.aupanier"), "html", null, true);
             echo "</h2>
         ";
-            // line 19
-            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form_panier_ajout"]) || array_key_exists("form_panier_ajout", $context) ? $context["form_panier_ajout"] : (function () { throw new RuntimeError('Variable "form_panier_ajout" does not exist.', 19, $this->source); })()), 'form');
+            // line 20
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form_panier_ajout"]) || array_key_exists("form_panier_ajout", $context) ? $context["form_panier_ajout"] : (function () { throw new RuntimeError('Variable "form_panier_ajout" does not exist.', 20, $this->source); })()), 'form');
             echo "
     ";
         }
-        // line 21
+        // line 22
         echo "
     ";
-        // line 22
+        // line 23
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 23
-            echo "        <hr>
+            // line 24
+            echo "    <!--accès a la modification et suppression d'un produit en tant qu'admin-->
+        <hr>
         <button type=\"button\" class=\"btn btn-warning\">
             <a href=\"";
-            // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("edit_produit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 25, $this->source); })()), "id", [], "any", false, false, false, 25)]), "html", null, true);
+            // line 27
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("edit_produit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 27, $this->source); })()), "id", [], "any", false, false, false, 27)]), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.modif"), "html", null, true);
             echo "</a>
@@ -148,18 +150,18 @@ class __TwigTemplate_da00b2cc93c794a8e24b77e79e77966f3036f4a1e7fc211717c1e2dc672
 
         <button type=\"button\" class=\"btn btn-danger\">
             <a href=\"";
-            // line 29
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 29, $this->source); })()), "id", [], "any", false, false, false, 29)]), "html", null, true);
+            // line 31
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 31, $this->source); })()), "id", [], "any", false, false, false, 31)]), "html", null, true);
             echo "\">
                 ";
-            // line 30
+            // line 32
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Produit.suppr"), "html", null, true);
             echo "
             </a>
         </button>
     ";
         }
-        // line 34
+        // line 36
         echo "
 
 ";
@@ -183,7 +185,7 @@ class __TwigTemplate_da00b2cc93c794a8e24b77e79e77966f3036f4a1e7fc211717c1e2dc672
 
     public function getDebugInfo()
     {
-        return array (  163 => 34,  156 => 30,  152 => 29,  143 => 25,  139 => 23,  137 => 22,  134 => 21,  129 => 19,  125 => 18,  122 => 17,  120 => 16,  115 => 14,  109 => 13,  106 => 12,  100 => 10,  98 => 9,  93 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  165 => 36,  158 => 32,  154 => 31,  145 => 27,  140 => 24,  138 => 23,  135 => 22,  130 => 20,  126 => 19,  122 => 17,  120 => 16,  115 => 14,  109 => 13,  106 => 12,  100 => 10,  98 => 9,  93 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -204,12 +206,14 @@ class __TwigTemplate_da00b2cc93c794a8e24b77e79e77966f3036f4a1e7fc211717c1e2dc672
     <p>{{ produit.prix }} €</p>
 
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <!--Option d'ajout au panier dispo si on est connecté-->
         <br>
         <h2>{{ 'Produit.aupanier'|trans }}</h2>
         {{form(form_panier_ajout)}}
     {% endif %}
 
     {% if is_granted('ROLE_ADMIN') %}
+    <!--accès a la modification et suppression d'un produit en tant qu'admin-->
         <hr>
         <button type=\"button\" class=\"btn btn-warning\">
             <a href=\"{{ path('edit_produit', {'id': produit.id}) }}\">{{ 'Produit.modif'|trans }}</a>

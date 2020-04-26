@@ -71,6 +71,6 @@ class __TwigTemplate_94bffa3530a089913810f304bbf5c5364728d81076607dc23aa7b860185
     public function getSourceContext()
     {
         return new Source("{% extends \"@email/zurb_2/notification/body.html.twig\" %}
-", "@email/default/notification/body.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_panier/vendor/symfony/twig-bridge/Resources/views/Email/default/notification/body.html.twig");
+", "@email/default/notification/body.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_commercev2/vendor/symfony/twig-bridge/Resources/views/Email/default/notification/body.html.twig");
     }
 }

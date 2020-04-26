@@ -227,6 +227,6 @@ class __TwigTemplate_9da7b292b17cded54f975df5bc4d076d77d1bd422641271b60d8d5dba22
         </div>
     </form>
 </div>
-", "@WebProfiler/Profiler/search.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_panier/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/search.html.twig");
+", "@WebProfiler/Profiler/search.html.twig", "/Users/eliseknowles/OneDrive - De Vinci/A2/symfony_commercev2/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/search.html.twig");
     }
 }

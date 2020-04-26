@@ -7,6 +7,9 @@
 <h1>{{ 'Panier.titre'|trans }}</h1>
 <br>
 
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+<!--Si l'utilisateur est connecté, il peux avoir accès au panier -->
+
     {% if panier is not empty %}
         <table class="table">
             <thead>
@@ -58,13 +61,15 @@
                     </td>
                 </tr>
             </tbody>
-
         </table>
-
 
     {% else %}
         <p>{{ 'Panier.noproduit'|trans }}</p>
     {% endif %}
+
+{% else %}
+    <p>{{ 'Panier.connect'|trans }}</p>
+{% endif %}
 
 
 {% endblock %}

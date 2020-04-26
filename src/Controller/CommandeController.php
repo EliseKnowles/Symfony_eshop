@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Commande;
 use App\Entity\User;
 use App\Repository\CommandeRepository;
-use App\Repository\PanierRepository;
 use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,10 +14,12 @@ class CommandeController extends AbstractController
     /**
      * @Route("/commande", name="commande")
      */
-    public function index()
+    public function index(CommandeRepository $commandeRepository)
     {
+        $panier = $commandeRepository-> findOneBy(['utilisateur'=> $this->getUser(), 'etat'=> false]);
+
         return $this->render('commande/index.html.twig', [
-            'controller_name' => 'CommandeController',
+            'panier' => $panier,
         ]);
     }
 

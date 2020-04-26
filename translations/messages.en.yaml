@@ -1,12 +1,15 @@
 Nom: "Name"
 Prenom: "Firstname"
 Email: "Email"
+Description: "Description"
+Stock: "Stock"
 Plain password: "Password"
 Photo: "Photo"
 Qte: "Quantity"
 Prix: "Price"
 Ajouter: "Add"
 Maj: "Update"
+Agree terms: "Agree Terms"
 
 Produit:
     produits: "Products"
@@ -34,12 +37,14 @@ Panier:
     achat: "Buy"
     article: "products"
     noproduit: "No products in the shopping bag yet"
+    connect: "You have to be log-in to see your shopping cart"
 
 Compte: 
     compte: "My Account"
     connexion : "Log-In"
     deconnexion: "You are logged in as "
     connect : "Sign in"
+    deco: "Logout"
     mdp: "password"
     newCompte: "Create an Account"
 

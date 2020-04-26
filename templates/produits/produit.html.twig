@@ -14,12 +14,14 @@
     <p>{{ produit.prix }} €</p>
 
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <!--Option d'ajout au panier dispo si on est connecté-->
         <br>
         <h2>{{ 'Produit.aupanier'|trans }}</h2>
         {{form(form_panier_ajout)}}
     {% endif %}
 
     {% if is_granted('ROLE_ADMIN') %}
+    <!--accès a la modification et suppression d'un produit en tant qu'admin-->
         <hr>
         <button type="button" class="btn btn-warning">
             <a href="{{ path('edit_produit', {'id': produit.id}) }}">{{ 'Produit.modif'|trans }}</a>
