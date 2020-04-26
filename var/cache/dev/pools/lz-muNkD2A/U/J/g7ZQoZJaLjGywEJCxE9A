@@ -11,8 +11,8 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
     [
         'stdClass' => [
             'type' => [
-                'integer',
-                2 => 'integer',
+                'float',
+                2 => 'float',
             ],
             'groups' => [
                 1 => [

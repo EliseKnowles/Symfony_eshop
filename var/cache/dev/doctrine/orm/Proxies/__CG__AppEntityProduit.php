@@ -282,7 +282,7 @@ class Produit extends \App\Entity\Produit implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getPrix(): ?int
+    public function getPrix(): ?float
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPrix', []);
@@ -293,7 +293,7 @@ class Produit extends \App\Entity\Produit implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setPrix(int $prix): \App\Entity\Produit
+    public function setPrix(float $prix): \App\Entity\Produit
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPrix', [$prix]);

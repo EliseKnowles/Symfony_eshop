@@ -48,9 +48,9 @@ class Produit
     private $stock;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="float")
      * @Assert\NotNull
-     * @Assert\Type("integer")
+     * @Assert\Type("float")
      * @Assert\GreaterThanOrEqual(0)
      */
     private $prix;
@@ -118,12 +118,12 @@ class Produit
         return $this;
     }
 
-    public function getPrix(): ?int
+    public function getPrix(): ?float
     {
         return $this->prix;
     }
 
-    public function setPrix(int $prix): self
+    public function setPrix(float $prix): self
     {
         $this->prix = $prix;
 
