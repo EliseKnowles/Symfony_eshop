@@ -13,6 +13,7 @@ class AdminController extends AbstractController
      */
     public function index(PanierRepository $panierRepository)
     {
+        // panier non acheter 
         $panierEnCours = $panierRepository->findBy(['etat'=> false]);
 
         return $this->render('admin/index.html.twig', [

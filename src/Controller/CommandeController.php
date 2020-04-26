@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Commande;
 use App\Entity\User;
 use App\Repository\CommandeRepository;
-use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -24,12 +23,13 @@ class CommandeController extends AbstractController
     }
 
     /**
-     * ACHAT DU PANIER
+     * Achat du panier
      * @Route("/commande/achat", name="commande_achat")
      */
 
     public function achat(CommandeRepository $commandeRepository) {
         
+        // la commande non acheté de l'utilisateur 
         $commande = $commandeRepository->findOneBy([
             'user' => $this->getUser(), 
             'etat' => false ]);
@@ -38,15 +38,20 @@ class CommandeController extends AbstractController
         $user = $pdo->getRepository(User::class)->findOneBy([]);
         $commande = new Commande();
 
+        //l'User prend l'ID de la commande
         $commande->getUser($user->getId());
+        //On change l'état de la commande en payé (true)
         $commande->setEtat(true);
+        //On définie la date d'achat 
         $commande->setDateAchat(new \DateTime());
 
         $pdo->persist($commande);
         $pdo->flush();
 
+        //msg Flash 
         $this->addFlash('success', 'Commande validé');
 
+        //redirection
         return $this->redirectToRoute('produits');
     }
 }

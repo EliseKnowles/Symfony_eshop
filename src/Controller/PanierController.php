@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Panier;
-use App\Repository\PanierRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
@@ -11,7 +10,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class PanierController extends AbstractController
 {
     /**
-     * PAGE PANIER
+     * Page Panier
      * @Route("/", name="panier")
      */
 
@@ -26,7 +25,7 @@ class PanierController extends AbstractController
     }
 
     /**
-     * PAGE SUPPRESSION 
+     * Suppression d'un article 
      * @Route("/panier/delete/{id}", name="panier_delete")
      */
 
@@ -36,11 +35,14 @@ class PanierController extends AbstractController
             $pdo->remove($panier);
             $pdo->flush();
 
+            //msg Flash 
             $this->addFlash("success", $translator->trans('Flash.panier.suppr'));
         }
         else{
+            //msg Flash 
             $this->addFlash("danger", $translator->trans('Flash.panier.erreur'));
         }
+        //redirection
         return $this->redirectToRoute('panier');
     }
 }

@@ -2,13 +2,10 @@
 
 namespace App\Controller;
 
-use App\Entity\Commande;
 use App\Entity\Panier;
 use App\Entity\Produit;
-use App\Entity\User;
 use App\Form\PanierType;
 use App\Form\ProduitType;
-use App\Repository\CommandeRepository;
 use App\Repository\ProduitRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
@@ -47,7 +44,7 @@ class ProduitsController extends AbstractController
         $form->handleRequest($request);
 
         if ( $form->isSubmitted() && $form->isValid() ) {
-
+            //ajout photo
             $photo = $form->get('photo')->getData();
             if($photo){
                 $nomPhoto = uniqid().'.'.$photo->guessExtension();
@@ -68,7 +65,9 @@ class ProduitsController extends AbstractController
             $pdo->persist($produit);
             $pdo->flush();
             
+            //redirection
             return $this->redirectToRoute('produits');
+            //msg Flash 
             $this->addFlash("success", $translator->trans('Flash.produit.creer'));
         }
 
@@ -80,7 +79,7 @@ class ProduitsController extends AbstractController
 
 
     /**
-     * PAGE FICHE PRODUIT
+     * Page Fiche Produit
      * @Route("/{id}", name="produit_view")
      */
 
@@ -98,9 +97,11 @@ class ProduitsController extends AbstractController
                     $pdo->persist($panier);
                     $pdo->flush();
 
+                    // msg Flash
                     $this->addFlash("success", $translator->trans('Flash.produit.aupanier'));
                 }
                 else {
+                    //msg Flash 
                     $this->addFlash("danger", $translator->trans('Flash.produit.stock'));
                 }
             }
@@ -111,13 +112,17 @@ class ProduitsController extends AbstractController
             ]);
         }
         else{
+            //msg Flash 
             $this->addFlash("danger", $translator->trans('Flash.produit.inexistant'));
+            // redirection 
             return $this->redirectToRoute('produits');
         }
         
     }
 
     /**
+     * accessible aux USER_ADMIN
+     * Page Modification du Produit 
      * @Route("/edit/{id}", name="edit_produit", methods={"GET","POST"})
      */
     public function edit(Request $request, Produit $produit): Response
@@ -128,6 +133,7 @@ class ProduitsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            //redirection
             return $this->redirectToRoute('produits');
         }
 
@@ -139,13 +145,14 @@ class ProduitsController extends AbstractController
 
     /**
      * Accessible par les admins USER_ADMIN
-     * PAGE SUPPRESSION PRODUIT
+     * Page Suppression du Produit
      * @Route("/produits/delete/{id}", name="produit_delete")
      */
 
     public function delete(Produit $produit=null, TranslatorInterface $translator){
         if($produit != null){
 
+            //suppression de la photo 
             if ($produit->getPhoto() !=null) {
                 unlink($this->getParameter('upload_dir'). $produit->getPhoto());
             }
@@ -154,11 +161,14 @@ class ProduitsController extends AbstractController
             $pdo->remove($produit);
             $pdo->flush();
 
+            //msg Flash 
             $this->addFlash("success", $translator->trans('Flash.produit.suppr'));
         }
         else{
+            //msg Flash 
             $this->addFlash("danger", $translator->trans('Flash.produit.inexistant'));
         }
+        //redirection
         return $this->redirectToRoute('produits');
     }
 }
